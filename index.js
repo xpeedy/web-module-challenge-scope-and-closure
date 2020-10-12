@@ -58,10 +58,10 @@ Write a function called `inning` that returns a random number of points that a t
 
 function inning(/*Code Here*/){
 
-  console.log(Math.floor(Math.random() * 3))
+  return Math.floor(Math.random() * 3)
 
 }
-inning()
+
 
 
 /* Task 3: finalScore()
@@ -78,11 +78,15 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
-
-  /*Code Here*/
-
+function finalScore(callback, number){
+ 
+  let score = {
+    Home: callback + 4,
+    Away: number + 2,
+  }
+  return console.log(score);
 }
+
 
 /* Task 4: 
 
@@ -105,8 +109,12 @@ and returns the score at each pont in the game, like so:
 Final Score: awayTeam - homeTeam */
 
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(getInningScore, inning, number) {
+  for(let i = 0; i > number; i++){
+    console.log(getInningScore + inning)
+  }
 }
-
-
+scoreboard(getInningScore(),inning(),5)
+function getInningScore() {
+  console.log("inning:")
+}
