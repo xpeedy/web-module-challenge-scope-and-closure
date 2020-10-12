@@ -27,11 +27,11 @@ function processFirstItem(stringList, callback) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
- * 
+ *    counter1 has a variable that can only be use inside the fuction.
  * 2. Which of the two uses a closure? How can you tell?
- * 
+ *    counter1 is uses closure by having the variable inside the fuction.
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
- *
+ *    counter one would be good for when you need to protect your variables and counter2 for when you need to re-use  the same variable.
 */
 
 // counter1 code
@@ -58,9 +58,11 @@ Write a function called `inning` that returns a random number of points that a t
 
 function inning(/*Code Here*/){
 
-    /*Code Here*/
+  return Math.floor(Math.random() * 3)
 
 }
+
+
 
 /* Task 3: finalScore()
 
@@ -76,11 +78,15 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
-
-  /*Code Here*/
-
+function finalScore(callback, number){
+ 
+  let score = {
+    Home: callback + 4,
+    Away: number + 2,
+  }
+  return console.log(score);
 }
+
 
 /* Task 4: 
 
@@ -103,8 +109,12 @@ and returns the score at each pont in the game, like so:
 Final Score: awayTeam - homeTeam */
 
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(getInningScore, inning, number) {
+  for(let i = 0; i > number; i++){
+    console.log(getInningScore + inning)
+  }
 }
-
-
+scoreboard(getInningScore(),inning(),5)
+function getInningScore() {
+  console.log("inning:")
+}
